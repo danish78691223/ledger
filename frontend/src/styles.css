@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit
+}
+
+button {
+    cursor: pointer;
+    border: 0
+}
+
+.app {
+    display: flex;
+    min-height: 100vh
+}
+
+aside {
+    width: 240px;
+    background: #111827;
+    color: white;
+    padding: 28px 18px;
+    position: fixed;
+    inset: 0 auto 0 0
+}
+
+aside h1 {
+    margin: 0;
+    font-size: 28px
+}
+
+aside .muted {
+    color: #9ca3af
+}
+
+nav {
+    display: grid;
+    gap: 8px;
+    margin-top: 30px
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 10px
+}
+
+nav a.active,
+nav a:hover {
+    background: #2563eb;
+    color: white
+}
+
+.logout {
+    position: absolute;
+    bottom: 24px;
+    left: 18px;
+    right: 18px;
+    background: #1f2937;
+    color: white;
+    padding: 11px;
+    border-radius: 10px
+}
+
+main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 28px;
+    max-width: 1500px
+}
+
+header {
+    margin-bottom: 28px
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0 0 20px
+}
+
+.muted {
+    color: #64748b
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px
+}
+
+.stats>div,
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px #00000008
+}
+
+.stats span {
+    display: block;
+    color: #64748b;
+    font-size: 14px
+}
+
+.stats b {
+    display: block;
+    font-size: 25px;
+    margin-top: 8px
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px
+}
+
+.card h3 {
+    margin-top: 0
+}
+
+.row,
+.expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #eef2f7
+}
+
+.row:last-child,
+.expense:last-child {
+    border-bottom: 0
+}
+
+.row small,
+.expense span {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 3px
+}
+
+.expense>div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.expense a {
+    color: #172033;
+    text-decoration: none
+}
+
+.expense a:hover {
+    color: #2563eb
+}
+
+.expense em {
+    font-size: 11px;
+    font-style: normal;
+    text-transform: uppercase;
+    padding: 4px 7px;
+    border-radius: 99px;
+    background: #fee2e2;
+    color: #991b1b
+}
+
+.expense em.paid {
+    background: #dcfce7;
+    color: #166534
+}
+
+.expense em.partial {
+    background: #fef3c7;
+    color: #92400e
+}
+
+.expense button {
+    background: none;
+    color: #dc2626
+}
+
+.form {
+    margin-bottom: 20px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+.form input,
+.form textarea,
+.form select,
+.authbox input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #dbe1ea;
+    border-radius: 9px;
+    background: white;
+    outline: none
+}
+
+.form textarea {
+    margin-top: 12px;
+    min-height: 80px;
+    resize: vertical
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 9px;
+    margin-top: 12px
+}
+
+.primary:disabled {
+    opacity: .5
+}
+
+.auth {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #f5f7fb
+}
+
+.authbox {
+    width: min(420px, 92vw)
+}
+
+.authbox input {
+    margin: 8px 0
+}
+
+.authbox a {
+    display: block;
+    text-align: center;
+    color: #2563eb;
+    margin-top: 16px;
+    cursor: pointer
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px
+}
+
+.center {
+    min-height: 100vh;
+    display: grid;
+    place-items: center
+}
+
+.auth h1 {
+    margin-bottom: 5px
+}
+
+@media(max-width:900px) {
+    aside {
+        width: 190px
+    }
+
+    main {
+        margin-left: 190px;
+        width: calc(100% - 190px)
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .two {
+        grid-template-columns: 1fr
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:600px) {
+    aside {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 18px
+    }
+
+    aside nav {
+        display: flex;
+        overflow: auto;
+        margin-top: 15px
+    }
+
+    aside .logout {
+        position: static;
+        margin-top: 12px;
+        width: 100%
+    }
+
+    .app {
+        display: block
+    }
+
+    main {
+        margin: 0;
+        width: 100%;
+        padding: 18px
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .grid {
+        grid-template-columns: 1fr
+    }
+
+    .expense {
+        gap: 10px;
+        align-items: flex-start
+    }
+
+    .expense>div:last-child {
+        flex-wrap: wrap;
+        justify-content: flex-end
+    }
+}
